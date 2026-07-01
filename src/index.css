@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* === WHITE INDUSTRIAL THEME === */
+  --color-white: #FFFFFF;
+  --color-off-white: #F5F5F5;
+  --color-surface: #FAFAFA;
+
+  --color-ink: #0A0F1A;
+  --color-ink-light: #3A3F4B;
+  --color-ink-muted: #6B7280;
+
+  --color-blue: #1B4EDB;
+  --color-blue-dark: #1340B5;
+  --color-blue-light: #EBF0FF;
+
+  --color-border: #E2E5EC;
+  --color-border-dark: #C9CDD8;
+
+  /* === FONTS === */
+  --font-heading: "Barlow Condensed", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+*, *::before, *::after {
+  border-radius: 0 !important;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* Refined for 10/10 industrial feel */
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+/* ===== INDUSTRIAL UTILITIES ===== */
+.structural-line-left {
+  position: relative;
+  border-left: 4px solid var(--color-blue);
+}
+
+.technical-data {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F5F5F5; }
+::-webkit-scrollbar-thumb { background: #C9CDD8; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-blue); }
+
+/* ===== MARQUEE ===== */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: scroll-left 40s linear infinite; /* Slightly slower for readability */
+  white-space: nowrap;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+
+
+/* ===== BUTTON POLISH ===== */
+.btn-industrial {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-industrial::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-industrial:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ===== FOCUS RING ===== */
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: var(--color-blue);
+  color: white;
+}

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "coil-heaters-01",
+    "slug": "coil-heaters",
+    "name": "Coil Heaters",
+    "category": "hot-runner",
+    "categoryLabel": "Hot Runner / Plastic Industry",
+    "images": ["/images/IMG_9425 copy.jpg"],
+    "shortDescription": "Fast response coil heaters with built-in J/K thermocouple.",
+    "fullDescription": "Engineered for tight tolerances and fast thermal response. Suitable for nozzle heating and injection molding.",
+    "specs": [
+      { "label": "Operating Temp", "value": "Up to 550°C" },
+      { "label": "Sizes", "value": "2.6x2.6 to 3.3x3.3mm" },
+      { "label": "Thermocouple", "value": "J/K type optionally built-in" }
+    ],
+    "applications": ["Plastic Extruders", "Hot Runner Nozzles", "Packaging"],
+    "features": ["Fast thermal response", "High dielectric strength", "Fully annealed to any shape"],
+    "relatedProducts": ["mi-thermocouples", "manifold-heaters"]
+  },
+  {
+    "id": "mi-thermocouple-02",
+    "slug": "mi-thermocouples",
+    "name": "MI Thermocouples",
+    "category": "hot-runner",
+    "categoryLabel": "Hot Runner / Plastic Industry",
+    "images": ["/images/15.jpg"],
+    "shortDescription": "Mineral Insulated Thermocouples available in customizable lengths.",
+    "fullDescription": "High reliability sensors built for rugged industrial environments. Can be bent to complex shapes without performance loss.",
+    "specs": [
+      { "label": "Diameter", "value": "1mm, 1.5mm, 3mm" },
+      { "label": "Length", "value": "Customizable" }
+    ],
+    "applications": ["Hot Runner Systems", "Ovens", "Die Casting"],
+    "features": ["Flexible", "High accuracy", "Fast response time"],
+    "relatedProducts": ["coil-heaters"]
+  },
+  {
+    "id": "ceramic-band-heater-001",
+    "slug": "ceramic-band-heater",
+    "name": "Ceramic Band Heater",
+    "category": "band-heaters",
+    "categoryLabel": "Band Heaters",
+    "images": ["/images/Ceramic Heaters..jpg"],
+    "shortDescription": "High thermal conductivity with built-in insulation for energy savings.",
+    "fullDescription": "Perfect for heating cylinders in injection molding machines. Built-in ceramic insulation reduces heat loss.",
+    "specs": [
+      { "label": "Operating Temperature", "value": "Up to 450°C" },
+      { "label": "Thermal Conductivity", "value": "High" },
+      { "label": "Insulation", "value": "Built-in thermal" }
+    ],
+    "applications": ["Plastic Extruders", "Blow Molding", "Injection Molding"],
+    "features": ["Uniform heat distribution", "Energy-saving insulation", "Customizable dimensions"],
+    "relatedProducts": ["mica-band-heater", "brass-sealed-band-heater"]
+  },
+  {
+    "id": "mica-band-heater-002",
+    "slug": "mica-band-heater",
+    "name": "Mica Band Heater",
+    "category": "band-heaters",
+    "categoryLabel": "Band Heaters",
+    "images": ["/images/Mica Band Heaters.jpg"],
+    "shortDescription": "Economical and excellent dielectric strength.",
+    "fullDescription": "Thin profile heaters providing fast heat transfer to cylinders.",
+    "specs": [
+      { "label": "Dielectric Strength", "value": "Excellent" },
+      { "label": "Customization", "value": "Customizable holes and cutouts" }
+    ],
+    "applications": ["Blow Molding", "Extrusion", "Packaging"],
+    "features": ["Economical", "Custom cutouts easily added", "Fast heat up"],
+    "relatedProducts": ["ceramic-band-heater"]
+  },
+  {
+    "id": "ceramic-infrared-heater-001",
+    "slug": "ceramic-infrared-heater",
+    "name": "Ceramic Infrared Heater",
+    "category": "infrared-heaters",
+    "categoryLabel": "Infrared Heaters",
+    "images": ["/images/16.jpg"],
+    "shortDescription": "Efficient radiant heaters operating between 400-600°C.",
+    "fullDescription": "Uses NiCr resistance wire embedded in a ceramic body for pure radiant heat transfer.",
+    "specs": [
+      { "label": "Operating Temperature", "value": "400 - 600°C" },
+      { "label": "Resistance", "value": "NiCr wire" }
+    ],
+    "applications": ["Drying", "Curing", "Thermoforming"],
+    "features": ["No direct contact needed", "Long operating life", "High radiant efficiency"],
+    "relatedProducts": ["silica-infrared-heater"]
+  },
+  {
+    "id": "silica-infrared-heater-002",
+    "slug": "silica-infrared-heater",
+    "name": "Silica Infrared Heater",
+    "category": "infrared-heaters",
+    "categoryLabel": "Infrared Heaters",
+    "images": ["/images/Slica glass heater.jpg"],
+    "shortDescription": "Ideal for chemical industries, high transparency to IR.",
+    "fullDescription": "High quality silica glass tube houses the heating element for distinct medium wave radiation.",
+    "specs": [
+      { "label": "OD", "value": "25 - 50mm" }
+    ],
+    "applications": ["Chemical processing", "Drying lines", "Shrink packaging"],
+    "features": ["Clean heating", "Chemically inert housing", "Fast response"],
+    "relatedProducts": ["ceramic-infrared-heater"]
+  },
+  {
+    "id": "cartridge-heater-001",
+    "slug": "high-density-cartridge-heater",
+    "name": "High Density Cartridge Heater",
+    "category": "cartridge-heaters",
+    "categoryLabel": "Cartridge Heaters",
+    "images": ["/images/Low & High Density Cartridge Heaters.jpg"],
+    "shortDescription": "Highly concentrated heat transfer up to maximum temperatures.",
+    "fullDescription": "Swaged construction allows high watt densities and excellent resistance to shock and vibration.",
+    "specs": [
+      { "label": "Diameter", "value": "Customizable" },
+      { "label": "Wattage/Voltage", "value": "Customizable" }
+    ],
+    "applications": ["Die Blocks", "Injection Molding", "Heating Plates"],
+    "features": ["High Watt Density", "Durable swaged build", "Internal thermocouples available"],
+    "relatedProducts": ["split-cartridge-heater"]
+  },
+  {
+    "id": "tubular-heater-001",
+    "slug": "tubular-heater",
+    "name": "Standard Tubular Heater",
+    "category": "tubular-heaters",
+    "categoryLabel": "Tubular Heaters",
+    "images": ["/images/Tubular Heaters 1.jpg"],
+    "shortDescription": "Versatile heaters for air, liquid, and solid heating applications.",
+    "fullDescription": "Available in various sheath materials including SS304, 321, 310, Inconel, and Titanium.",
+    "specs": [
+      { "label": "Materials", "value": "SS304/321/310/Inconel/Titanium" },
+      { "label": "Form Factor", "value": "Custom bent" }
+    ],
+    "applications": ["Casting", "Air Heating", "Corrugation"],
+    "features": ["Highly versatile", "Rugged construction", "Long lifespan"],
+    "relatedProducts": ["water-immersion-heater"]
+  },
+  {
+    "id": "immersion-heater-001",
+    "slug": "water-immersion-heater",
+    "name": "Water Immersion Heater",
+    "category": "tubular-heaters",
+    "categoryLabel": "Tubular & Immersion Heaters",
+    "images": ["/images/Tubular Heaters 2.jpg"],
+    "shortDescription": "Direct heat transfer for water and aqueous solutions.",
+    "fullDescription": "Constructed with SS304, 321, 316, or Copper sheaths with robust threaded plugs or flanges.",
+    "specs": [
+      { "label": "Sheath", "value": "SS304/321/316/Copper" },
+      { "label": "Mounting", "value": "Threaded plug / Flange" }
+    ],
+    "applications": ["Water Tanks", "Boilers", "Cleaning Tanks"],
+    "features": ["100% efficient heat transfer", "Easy installation", "Customizable thermowells"],
+    "relatedProducts": ["oil-immersion-heater", "tubular-heater"]
+  }
+]
