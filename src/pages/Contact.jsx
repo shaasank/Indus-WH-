@@ -17,17 +17,17 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-white text-[#0A0F1A]">
+    <div className="bg-white text-[#000000]">
 
       {/* Page Header */}
       <div className="bg-[#F5F5F5] border-b border-[#E2E5EC]">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-6 h-[2px] bg-[#1B4EDB]" />
-            <span className="text-[#1B4EDB] font-heading text-xs font-bold uppercase tracking-[0.2em]">Get In Touch</span>
+            <div className="w-6 h-[2px] bg-[#000000]" />
+            <span className="text-[#000000] font-heading text-xs font-bold uppercase tracking-[0.2em]">Get In Touch</span>
           </div>
           <h1 className="font-heading text-5xl font-bold">Contact Us</h1>
-          <p className="text-[#6B7280] mt-2 max-w-lg" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+          <p className="text-[#6B7280] mt-2 max-w-lg" style={{ fontFamily: 'Roboto, sans-serif' }}>
             Reach out with product questions, custom requirements, or general enquiries. Our team responds within 24 business hours.
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function Contact() {
                   <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                 </div>
                 <h3 className="font-heading text-2xl font-bold mb-2">Message Sent</h3>
-                <p className="text-[#6B7280] text-sm" style={{ fontFamily: 'DM Sans, sans-serif' }}>We'll get back to you within 24 hours.</p>
+                <p className="text-[#6B7280] text-sm" style={{ fontFamily: 'Roboto, sans-serif' }}>We'll get back to you within 24 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="px-8 py-8 space-y-5">
@@ -56,7 +56,7 @@ export default function Contact() {
                   {[{ label: 'Full Name', type: 'text' }, { label: 'Company', type: 'text' }].map(f => (
                     <div key={f.label}>
                       <label className="block text-[10px] font-heading font-bold uppercase tracking-[0.15em] text-[#6B7280] mb-1">{f.label} *</label>
-                      <input required type={f.type} className="w-full border border-[#E2E5EC] px-3 py-2.5 text-sm focus:border-[#1B4EDB] focus:outline-none transition-colors" style={{ fontFamily: 'DM Sans, sans-serif' }} />
+                      <input required type={f.type} className="w-full border border-[#E2E5EC] px-3 py-2.5 text-sm focus:border-[#000000] focus:outline-none transition-colors" style={{ fontFamily: 'Roboto, sans-serif' }} />
                     </div>
                   ))}
                 </div>
@@ -65,17 +65,17 @@ export default function Contact() {
                   {[{ label: 'Email', type: 'email' }, { label: 'Phone', type: 'tel' }].map(f => (
                     <div key={f.label}>
                       <label className="block text-[10px] font-heading font-bold uppercase tracking-[0.15em] text-[#6B7280] mb-1">{f.label} *</label>
-                      <input required type={f.type} className="w-full border border-[#E2E5EC] px-3 py-2.5 text-sm focus:border-[#1B4EDB] focus:outline-none transition-colors" style={{ fontFamily: 'DM Sans, sans-serif' }} />
+                      <input required type={f.type} className="w-full border border-[#E2E5EC] px-3 py-2.5 text-sm focus:border-[#000000] focus:outline-none transition-colors" style={{ fontFamily: 'Roboto, sans-serif' }} />
                     </div>
                   ))}
                 </div>
 
                 <div>
                   <label className="block text-[10px] font-heading font-bold uppercase tracking-[0.15em] text-[#6B7280] mb-1">Message *</label>
-                  <textarea required rows={5} className="w-full border border-[#E2E5EC] px-3 py-2.5 text-sm focus:border-[#1B4EDB] focus:outline-none transition-colors resize-y" placeholder="Describe your requirement or question..." style={{ fontFamily: 'DM Sans, sans-serif' }} />
+                  <textarea required rows={5} className="w-full border border-[#E2E5EC] px-3 py-2.5 text-sm focus:border-[#000000] focus:outline-none transition-colors resize-y" placeholder="Describe your requirement or question..." style={{ fontFamily: 'Roboto, sans-serif' }} />
                 </div>
 
-                <button type="submit" disabled={loading} className="w-full bg-[#1B4EDB] text-white py-4 font-heading font-bold text-sm uppercase tracking-widest hover:bg-[#1340B5] transition-colors disabled:opacity-60">
+                <button type="submit" disabled={loading} className="w-full bg-[#000000] text-white py-4 font-heading font-bold text-sm uppercase tracking-widest hover:bg-[#111827] transition-colors disabled:opacity-60">
                   {loading ? 'Sending...' : 'Send Message →'}
                 </button>
               </form>
@@ -92,31 +92,31 @@ export default function Contact() {
               {locations.map((loc, i) => (
                 <div key={i} className="p-8 hover:bg-[#F5F5F5] transition-colors">
                   <div className="flex items-start gap-3 mb-5">
-                    <MapPin className="w-4 h-4 text-[#1B4EDB] mt-0.5 shrink-0" />
+                    <MapPin className="w-4 h-4 text-[#000000] mt-0.5 shrink-0" />
                     <div>
                       <div className="font-heading text-base font-bold uppercase tracking-wide mb-1">{loc.city}</div>
-                      <p className="text-sm text-[#6B7280]" style={{ fontFamily: 'DM Sans, sans-serif' }}>{loc.address}</p>
+                      <p className="text-sm text-[#6B7280]" style={{ fontFamily: 'Roboto, sans-serif' }}>{loc.address}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-[#3A3F4B] mb-2" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                    <Phone className="w-3.5 h-3.5 text-[#1B4EDB] shrink-0" />
-                    <a href={`tel:${loc.phone}`} className="hover:text-[#1B4EDB] transition-colors">{loc.phone}</a>
+                  <div className="flex items-center gap-3 text-sm text-[#4B5563] mb-2" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                    <Phone className="w-3.5 h-3.5 text-[#000000] shrink-0" />
+                    <a href={`tel:${loc.phone}`} className="hover:text-[#000000] transition-colors">{loc.phone}</a>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-[#3A3F4B]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                    <Mail className="w-3.5 h-3.5 text-[#1B4EDB] shrink-0" />
-                    <a href={`mailto:${loc.email}`} className="hover:text-[#1B4EDB] transition-colors">{loc.email}</a>
+                  <div className="flex items-center gap-3 text-sm text-[#4B5563]" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                    <Mail className="w-3.5 h-3.5 text-[#000000] shrink-0" />
+                    <a href={`mailto:${loc.email}`} className="hover:text-[#000000] transition-colors">{loc.email}</a>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Hours */}
-            <div className="p-8 bg-[#EBF0FF] border-t border-[#E2E5EC]">
+            <div className="p-8 bg-[#F3F4F6] border-t border-[#E2E5EC]">
               <div className="flex items-center gap-2 mb-3">
-                <Clock className="w-4 h-4 text-[#1B4EDB]" />
-                <span className="font-heading text-xs font-bold uppercase tracking-widest text-[#1B4EDB]">Business Hours</span>
+                <Clock className="w-4 h-4 text-[#000000]" />
+                <span className="font-heading text-xs font-bold uppercase tracking-widest text-[#000000]">Business Hours</span>
               </div>
-              <div className="text-sm text-[#3A3F4B] space-y-1" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+              <div className="text-sm text-[#4B5563] space-y-1" style={{ fontFamily: 'Roboto, sans-serif' }}>
                 <div className="flex justify-between"><span>Monday – Friday</span><span className="font-semibold">9:00 – 18:00</span></div>
                 <div className="flex justify-between"><span>Saturday</span><span className="font-semibold">9:00 – 14:00</span></div>
                 <div className="flex justify-between text-[#6B7280]"><span>Sunday</span><span>Closed</span></div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 @import "tailwindcss";
 
@@ -8,21 +8,21 @@
   --color-off-white: #F5F5F5;
   --color-surface: #FAFAFA;
 
-  --color-ink: #0A0F1A;
-  --color-ink-light: #3A3F4B;
+  --color-ink: #000000;
+  --color-ink-light: #4B5563;
   --color-ink-muted: #6B7280;
 
-  --color-blue: #1B4EDB;
-  --color-blue-dark: #1340B5;
-  --color-blue-light: #EBF0FF;
+  --color-blue: #1880c3;
+  --color-blue-dark: #0f6aa4;
+  --color-blue-light: #E8F3FA;
 
   --color-border: #E2E5EC;
   --color-border-dark: #C9CDD8;
 
   /* === FONTS === */
-  --font-heading: "Barlow Condensed", sans-serif;
-  --font-body: "DM Sans", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-heading: "Roboto", sans-serif;
+  --font-body: "Roboto", sans-serif;
+  --font-mono: "Roboto", sans-serif;
 }
 
 *, *::before, *::after {
@@ -37,16 +37,16 @@ html {
 body {
   background-color: #FFFFFF;
   color: var(--color-ink);
-  font-family: var(--font-body);
+  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.1em; /* Refined for 10/10 industrial feel */
+  letter-spacing: 0;
   color: var(--color-ink);
   font-weight: 700;
 }
@@ -54,19 +54,19 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== INDUSTRIAL UTILITIES ===== */
 .structural-line-left {
   position: relative;
-  border-left: 4px solid var(--color-blue);
+  border-left: 4px solid var(--color-ink);
 }
 
 .technical-data {
-  font-family: var(--font-mono);
-  letter-spacing: -0.02em;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0;
 }
 
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #F5F5F5; }
 ::-webkit-scrollbar-thumb { background: #C9CDD8; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-blue); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink); }
 
 /* ===== MARQUEE ===== */
 @keyframes scroll-left {
@@ -113,12 +113,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== FOCUS RING ===== */
 :focus-visible {
-  outline: 2px solid var(--color-blue);
+  outline: 2px solid var(--color-ink);
   outline-offset: 2px;
 }
 
 /* ===== SELECTION ===== */
 ::selection {
-  background: var(--color-blue);
+  background: var(--color-ink);
   color: white;
 }

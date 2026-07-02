@@ -33,7 +33,7 @@ export default function Products() {
 
 
   return (
-    <div className="bg-white text-[#0A0F1A]">
+    <div className="bg-white text-[#000000]">
 
       {/* ── CATALOGUE HEADER ──────────────────── */}
       <div className="border-b border-[#E2E5EC] bg-[#FAFAFA] relative overflow-hidden">
@@ -44,8 +44,8 @@ export default function Products() {
         
         <div className="max-w-7xl mx-auto px-6 py-16 relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="structural-line-left pl-8">
-            <div className="text-[#1B4EDB] font-mono text-[10px] font-bold uppercase tracking-[0.3em] mb-4">SYSTEM_CATALOGUE_V2.0</div>
-            <h1 className="font-heading text-6xl font-bold tracking-tight text-[#0A0F1A]">PRODUCT<br />INVENTORY</h1>
+            <div className="text-[#000000] font-mono text-[10px] font-bold uppercase tracking-[0.3em] mb-4">SYSTEM_CATALOGUE_V2.0</div>
+            <h1 className="font-heading text-6xl font-bold tracking-tight text-[#000000]">PRODUCT<br />INVENTORY</h1>
             <p className="text-[#6B7280] mt-6 max-w-md font-body text-base leading-relaxed">
               Access 500+ precision heating configurations. Use the sidebar module to filter by category or technical specification.
             </p>
@@ -53,15 +53,15 @@ export default function Products() {
 
           {/* Search Module */}
           <div className="w-full md:w-80 group">
-             <div className="text-[#6B7280] font-mono text-[9px] uppercase tracking-[0.2em] mb-2 font-bold group-focus-within:text-[#1B4EDB] transition-colors">SEARCH_DATABASE</div>
+             <div className="text-[#6B7280] font-mono text-[9px] uppercase tracking-[0.2em] mb-2 font-bold group-focus-within:text-[#000000] transition-colors">SEARCH_DATABASE</div>
              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#C9CDD8] group-focus-within:text-[#1B4EDB]" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#C9CDD8] group-focus-within:text-[#000000]" />
                 <input 
                   type="text" 
                   placeholder="ID / NAME / SPEC..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white border border-[#E2E5EC] pl-10 pr-4 py-3 text-xs font-mono font-bold focus:border-[#1B4EDB] focus:outline-none focus:ring-4 focus:ring-[#1B4EDB]/5 transition-all uppercase tracking-widest placeholder:text-[#C9CDD8]/50"
+                  className="w-full bg-white border border-[#E2E5EC] pl-10 pr-4 py-3 text-xs font-mono font-bold focus:border-[#000000] focus:outline-none focus:ring-4 focus:ring-[#000000]/5 transition-all uppercase tracking-widest placeholder:text-[#C9CDD8]/50"
                   style={{ borderRadius: 0 }}
                 />
              </div>
@@ -74,8 +74,8 @@ export default function Products() {
         {/* ── SIDEBAR CONTROL MODULE ───────────── */}
         <aside className="lg:w-64 shrink-0 lg:border-r border-[#E2E5EC] lg:pr-10 lg:mr-10">
           <div className="flex items-center justify-between mb-8 border-b border-[#E2E5EC] pb-4">
-            <div className="flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#0A0F1A]">
-              <Filter className="w-3.5 h-3.5 text-[#1B4EDB]" /> FILTER_SYSTEM
+            <div className="flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#000000]">
+              <Filter className="w-3.5 h-3.5 text-[#000000]" /> FILTER_SYSTEM
             </div>
             {activeCategory && (
               <button
@@ -93,8 +93,8 @@ export default function Products() {
                 onClick={() => setActiveCategory('')}
                 className={`w-full text-left px-4 py-3 text-xs font-mono font-bold transition-all border-l-4 group flex justify-between items-center ${
                   activeCategory === ''
-                    ? 'border-[#1B4EDB] text-[#1B4EDB] bg-[#EBF0FF]/50'
-                    : 'border-transparent text-[#6B7280] hover:text-[#0A0F1A] hover:bg-[#F5F5F5] hover:border-[#F5F5F5]'
+                    ? 'border-[#000000] text-[#000000] bg-[#F3F4F6]/50'
+                    : 'border-transparent text-[#6B7280] hover:text-[#000000] hover:bg-[#F5F5F5] hover:border-[#F5F5F5]'
                 }`}
               >
                 <span>ALL_MODULES</span>
@@ -108,8 +108,8 @@ export default function Products() {
                     onClick={() => setActiveCategory(cat)}
                     className={`w-full text-left px-4 py-3 text-xs font-mono font-bold transition-all border-l-4 group flex justify-between items-center uppercase tracking-wider ${
                       activeCategory === cat
-                        ? 'border-[#1B4EDB] text-[#1B4EDB] bg-[#EBF0FF]/50'
-                        : 'border-transparent text-[#6B7280] hover:text-[#0A0F1A] hover:bg-[#F5F5F5] hover:border-[#F5F5F5]'
+                        ? 'border-[#000000] text-[#000000] bg-[#F3F4F6]/50'
+                        : 'border-transparent text-[#6B7280] hover:text-[#000000] hover:bg-[#F5F5F5] hover:border-[#F5F5F5]'
                     }`}
                   >
                     <span className="truncate">{cat.replace(/ /g, '_')}</span>
@@ -120,8 +120,8 @@ export default function Products() {
             </div>
 
             {/* Quick Technical Help Box */}
-            <div className="mt-12 p-6 bg-[#0A0F1A] text-white">
-               <div className="w-8 h-[2px] bg-[#1B4EDB] mb-4" />
+            <div className="mt-12 p-6 bg-[#000000] text-white">
+               <div className="w-8 h-[2px] bg-white/40 mb-4" />
                <div className="font-mono text-[9px] font-bold uppercase tracking-[0.3em] mb-3 text-white/40">SYSTEM_NOTE</div>
                <p className="font-mono text-[10px] leading-relaxed text-white/70">
                  All products are available with custom J/K type thermocouples and SS316 sheath configurations.
@@ -134,7 +134,7 @@ export default function Products() {
             <button
               onClick={() => setActiveCategory('')}
               className={`flex-1 min-w-[33%] px-4 py-3 text-[10px] font-mono font-bold uppercase tracking-widest border-r border-b border-[#E2E5EC] transition-all ${
-                activeCategory === '' ? 'bg-[#1B4EDB] text-white border-[#1B4EDB]' : 'bg-white text-[#3A3F4B]'
+                activeCategory === '' ? 'bg-[#000000] text-white border-[#000000]' : 'bg-white text-[#4B5563]'
               }`}
             >
               ALL
@@ -144,7 +144,7 @@ export default function Products() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`flex-1 min-w-[33%] px-4 py-3 text-[10px] font-mono font-bold uppercase tracking-widest border-r border-b border-[#E2E5EC] transition-all truncate ${
-                  activeCategory === cat ? 'bg-[#1B4EDB] text-white border-[#1B4EDB]' : 'bg-white text-[#3A3F4B]'
+                  activeCategory === cat ? 'bg-[#000000] text-white border-[#000000]' : 'bg-white text-[#4B5563]'
                 }`}
               >
                 {cat.split(' ')[0]}
@@ -158,12 +158,12 @@ export default function Products() {
           {/* Metadata Bar */}
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#E2E5EC]">
             <div className="font-mono text-[10px] font-bold text-[#6B7280] uppercase tracking-[0.2em] flex items-center gap-3">
-              <Activity className="w-3.5 h-3.5 text-[#1B4EDB]" />
-              LOADED: <strong className="text-[#0A0F1A]">{filtered.length}_SKU_FOUND</strong>
+              <Activity className="w-3.5 h-3.5 text-[#000000]" />
+              LOADED: <strong className="text-[#000000]">{filtered.length}_SKU_FOUND</strong>
             </div>
             <div className="flex items-center gap-4">
                <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[#C9CDD8]">
-                  VIEW_MODE: <Grid className="w-3.5 h-3.5 text-[#1B4EDB]" />
+                  VIEW_MODE: <Grid className="w-3.5 h-3.5 text-[#000000]" />
                </div>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function Products() {
                       <div className="h-60 bg-[#FAFAFA] flex items-center justify-center overflow-hidden border-b border-[#E2E5EC] p-10 relative">
                         {/* Dimensional Grid overlay on card */}
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none" style={{
-                           backgroundImage: `linear-gradient(#1B4EDB 1px, transparent 1px), linear-gradient(90deg, #1B4EDB 1px, transparent 1px)`,
+                           backgroundImage: `linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px)`,
                            backgroundSize: '16px 16px',
                         }} />
                         
@@ -206,7 +206,7 @@ export default function Products() {
                           className="max-h-44 w-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out"
                         />
                         
-                        <div className="absolute top-4 right-4 font-mono text-[8px] text-[#C9CDD8] tracking-[0.2em] group-hover:text-[#1B4EDB] transition-colors">
+                        <div className="absolute top-4 right-4 font-mono text-[8px] text-[#C9CDD8] tracking-[0.2em] group-hover:text-[#000000] transition-colors">
                           MOD_REF: IH_{product.id}
                         </div>
                       </div>
@@ -214,21 +214,21 @@ export default function Products() {
                       {/* Info Module */}
                       <div className="p-8">
                         <div className="inline-flex items-center gap-2 mb-3">
-                           <div className="w-1.5 h-1.5 bg-[#1B4EDB]" />
-                           <div className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#1B4EDB]">
+                           <div className="w-1.5 h-1.5 bg-[#000000]" />
+                           <div className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#000000]">
                               {product.categoryLabel.replace(/ /g, '_')}
                            </div>
                         </div>
-                        <h3 className="font-heading text-2xl font-bold text-[#0A0F1A] leading-tight mb-4 group-hover:text-[#1B4EDB] transition-colors">
+                        <h3 className="font-heading text-2xl font-bold text-[#000000] leading-tight mb-4 group-hover:text-[#000000] transition-colors">
                           {product.name}
                         </h3>
-                        <p className="text-sm text-[#6B7280] mb-8 leading-relaxed line-clamp-2 font-body" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                        <p className="text-sm text-[#6B7280] mb-8 leading-relaxed line-clamp-2 font-body" style={{ fontFamily: 'Roboto, sans-serif' }}>
                           {product.shortDescription}
                         </p>
 
                         {/* Specs Module - Monospaced Detail */}
                         {product.specs[0] && (
-                          <div className="text-[10px] font-mono bg-[#0A0F1A] text-white/90 px-4 py-3 flex justify-between border-b-2 border-[#1B4EDB]">
+                          <div className="text-[10px] font-mono bg-[#000000] text-white/90 px-4 py-3 flex justify-between border-b-2 border-[#000000]">
                             <span className="opacity-50 uppercase tracking-tighter">{product.specs[0].label}</span>
                             <span className="font-bold tracking-tight">{product.specs[0].value}</span>
                           </div>
@@ -240,14 +240,14 @@ export default function Products() {
                     <div className="flex border-t border-[#E2E5EC]">
                       <Link
                         to={`/products/${product.category}/${product.slug}`}
-                        className="flex-[3] py-4 text-xs font-mono font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3 relative overflow-hidden group/btn bg-[#1B4EDB] text-white hover:bg-[#1340B5]"
+                        className="flex-[3] py-4 text-xs font-mono font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3 relative overflow-hidden group/btn bg-[#000000] text-white hover:bg-[#111827]"
                       >
                         <ClipboardList className="w-4 h-4 transition-transform group-hover/btn:rotate-12" />
                         CONFIGURE_PRODUCT
                       </Link>
                       <Link
                         to={`/products/${product.category}/${product.slug}`}
-                        className="flex-1 py-4 text-center text-[#3A3F4B] hover:text-[#1B4EDB] hover:bg-[#EBF0FF] border-l border-[#E2E5EC] flex items-center justify-center transition-all group/info"
+                        className="flex-1 py-4 text-center text-[#4B5563] hover:text-[#000000] hover:bg-[#F3F4F6] border-l border-[#E2E5EC] flex items-center justify-center transition-all group/info"
                         title="FULL_SYSTEM_SPECS"
                       >
                         <FileText className="w-4 h-4 group-hover/info:scale-110 transition-transform" />

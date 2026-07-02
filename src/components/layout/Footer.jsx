@@ -7,7 +7,7 @@ const categoryToSlug = (category) => category.toLowerCase().replace(/[^a-z0-9]+/
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A0F1A] text-white border-t-4 border-[#1B4EDB]">
+    <footer className="bg-[#000000] text-white border-t-4 border-[#000000]">
 
       {/* Main Footer Grid */}
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-white/10">
@@ -15,7 +15,7 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-7 h-7 bg-[#1B4EDB] flex items-center justify-center">
+            <div className="w-7 h-7 border border-white/30 flex items-center justify-center">
               <span className="text-white font-heading font-bold text-sm">IH</span>
             </div>
             <span className="font-heading text-lg font-bold tracking-widest">INDUS HEATERS</span>
@@ -33,7 +33,7 @@ const Footer = () => {
           <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-white/40 mb-5 pb-3 border-b border-white/10">Quick Links</h4>
           <div className="flex flex-col gap-3">
             {[['/', 'Home'], ['/products', 'All Products'], ['/about', 'About Us'], ['/contact', 'Contact'], ['/enquiry', 'Send Enquiry']].map(([path, label]) => (
-              <Link key={path} to={path} className="text-sm text-white/60 hover:text-[#1B4EDB] hover:translate-x-1 transition-all inline-block">
+              <Link key={path} to={path} className="text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block">
                 {label}
               </Link>
             ))}
@@ -45,7 +45,7 @@ const Footer = () => {
           <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-white/40 mb-5 pb-3 border-b border-white/10">Product Range</h4>
           <div className="flex flex-col gap-3">
             {footerCategories.map(cat => (
-              <Link key={cat} to={`/products?category=${categoryToSlug(cat)}`} className="text-sm text-white/60 hover:text-[#1B4EDB] hover:translate-x-1 transition-all inline-block">
+              <Link key={cat} to={`/products?category=${categoryToSlug(cat)}`} className="text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block">
                 {cat}
               </Link>
             ))}
@@ -57,21 +57,21 @@ const Footer = () => {
           <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-white/40 mb-5 pb-3 border-b border-white/10">Locations</h4>
           <div className="flex flex-col gap-4">
             <div className="flex gap-3 text-sm text-white/60">
-              <MapPin className="w-4 h-4 text-[#1B4EDB] mt-0.5 shrink-0" />
+              <MapPin className="w-4 h-4 text-white/60 mt-0.5 shrink-0" />
               <div>
-                <div className="text-[#1B4EDB] font-bold text-[10px] uppercase tracking-[0.2em] mb-0.5 font-mono">HQ — CHENNAI</div>
+                <div className="text-white/70 font-bold text-[10px] uppercase tracking-[0.2em] mb-0.5 font-mono">HQ — CHENNAI</div>
                 <div className="font-mono text-[10px] text-white/60">Tamil Nadu, India</div>
               </div>
             </div>
             <div className="flex gap-3 text-sm text-white/60">
-              <MapPin className="w-4 h-4 text-[#1B4EDB] mt-0.5 shrink-0" />
+              <MapPin className="w-4 h-4 text-white/60 mt-0.5 shrink-0" />
               <div>
-                <div className="text-[#1B4EDB] font-bold text-[10px] uppercase tracking-[0.2em] mb-0.5 font-mono">PLANT — MUTLUR</div>
+                <div className="text-white/70 font-bold text-[10px] uppercase tracking-[0.2em] mb-0.5 font-mono">PLANT — MUTLUR</div>
                 <div className="font-mono text-[10px] text-white/60">Tamil Nadu, India</div>
               </div>
             </div>
             <div className="flex gap-3 text-sm text-white/60">
-              <Mail className="w-4 h-4 text-[#1B4EDB] mt-0.5 shrink-0" />
+              <Mail className="w-4 h-4 text-white/60 mt-0.5 shrink-0" />
               <span>info@indusheaters.com</span>
             </div>
           </div>
