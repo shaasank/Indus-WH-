@@ -1,28 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
 @import "tailwindcss";
 
+/* === FONT FACE REGISTRATION === */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/Fonts/Fonts/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/Fonts/Fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  /* === WHITE INDUSTRIAL THEME === */
-  --color-white: #FFFFFF;
-  --color-off-white: #F5F5F5;
-  --color-surface: #FAFAFA;
+  /* === BRAND TOKENS === */
+  --color-accent: #d81b21;
+  --color-primary: #152f54;
+  --color-secondary: #c7942b;
+  --color-muted: #818286;
 
-  --color-ink: #000000;
-  --color-ink-light: #4B5563;
-  --color-ink-muted: #6B7280;
+  /* === NEUTRAL TINTS === */
+  --color-white: #ffffff;
+  --color-off-white: #f8fafc;
+  --color-surface: #f4f6f8;
+  --color-border: #e2e5ec;
+  --color-border-dark: #818286;
 
-  --color-blue: #1880c3;
-  --color-blue-dark: #0f6aa4;
-  --color-blue-light: #E8F3FA;
+  /* === TYPOGRAPHY === */
+  --font-heading: 'Gilroy', sans-serif;
+  --font-body: 'Gilroy', sans-serif;
+  --font-mono: 'Gilroy', monospace;
+}
 
-  --color-border: #E2E5EC;
-  --color-border-dark: #C9CDD8;
-
-  /* === FONTS === */
-  --font-heading: "Roboto", sans-serif;
-  --font-body: "Roboto", sans-serif;
-  --font-mono: "Roboto", sans-serif;
+:root {
+  --color-accent: #d81b21;
+  --color-primary: #152f54;
+  --color-secondary: #c7942b;
+  --color-muted: #818286;
+  --color-border: #e2e5ec;
 }
 
 *, *::before, *::after {
@@ -34,55 +110,42 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body, button, input, textarea, select, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gilroy', sans-serif;
+}
+
 body {
-  background-color: #FFFFFF;
-  color: var(--color-ink);
-  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+  color: var(--color-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0;
-  color: var(--color-ink);
+  color: var(--color-primary);
   font-weight: 700;
 }
 
 /* ===== INDUSTRIAL UTILITIES ===== */
 .structural-line-left {
   position: relative;
-  border-left: 4px solid var(--color-ink);
+  border-left: 4px solid var(--color-accent);
 }
 
 .technical-data {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Gilroy', monospace;
   letter-spacing: 0;
 }
 
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #F5F5F5; }
-::-webkit-scrollbar-thumb { background: #C9CDD8; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-ink); }
-
-/* ===== MARQUEE ===== */
-@keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.marquee-track {
-  display: inline-flex;
-  animation: scroll-left 40s linear infinite; /* Slightly slower for readability */
-  white-space: nowrap;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #818286; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
 
 
 
@@ -100,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 2px;
-  background: white;
+  background: var(--color-secondary);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -113,12 +176,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== FOCUS RING ===== */
 :focus-visible {
-  outline: 2px solid var(--color-ink);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
 /* ===== SELECTION ===== */
 ::selection {
-  background: var(--color-ink);
-  color: white;
+  background: var(--color-accent);
+  color: #ffffff;
 }

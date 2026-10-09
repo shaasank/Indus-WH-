@@ -1,0 +1,11 @@
+# Indus-WH brand rules
+- Colors (use ONLY these + neutral white/black tints):
+  - #d81b21 = accent / highlight / primary CTA / active & hover states
+  - #152f54 = primary dark (navbar/footer backgrounds, headings)
+  - #c7942b = secondary gold (small highlights, dividers, icons)
+  - #818286 = muted text, borders, secondary UI
+- Define colors ONCE as CSS variables / Tailwind theme tokens. Never hardcode hex in components.
+- Font: the custom font in src/assets/Fonts, loaded via @font-face, applied globally to body and all elements (inputs/buttons included). No fallback to other web fonts.
+- Spacing: consistent scale only; no stray margins, empty divs, or <br> used for spacing.
+- Do not touch node_modules, lockfiles, or config files unless required. Explain any dependency you add.
+- After UI changes, run the dev server, check in the browser, and attach screenshots.
