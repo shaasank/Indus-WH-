@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 import ourApproachImg from '../assets/products/5.png';
+import redLogo from '../assets/red.jpeg';
 import SectionHeading from '../components/SectionHeading';
 import StatsBar from '../components/StatsBar';
 import HeroButton from '../components/HeroButton';
@@ -67,9 +68,9 @@ export default function Home() {
 
       {/* ── HERO ─────────────────────────────────────── */}
       <section className="relative min-h-[calc(100vh-75px)] md:min-h-[520px] lg:min-h-[600px] flex items-stretch border-b border-muted/15 overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-stretch justify-between relative z-10 py-8 sm:py-12 md:py-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-stretch justify-between relative z-10 md:py-0">
           
-          {/* Mobile: Top (order-1), Desktop: Right Panel */}
+          {/* Mobile: Top (order-1), Desktop: Right Panel — flush to top, no gap */}
           <div className="order-1 md:order-2 w-full md:w-1/2 md:absolute md:top-0 md:bottom-0 md:right-0 h-64 sm:h-80 md:h-full relative overflow-hidden bg-muted/5">
             {heroImages.map((imgSrc, idx) => (
               <img
@@ -92,11 +93,11 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Color Mix: Red Heading on White */}
-            <h1 className="font-heading font-light text-5xl sm:text-7xl lg:text-8xl text-accent mb-6 sm:mb-8 tracking-tight leading-[1.25]">
-              BUILT FOR<br />
+            {/* BUILT FOR / BUILT TO in grey, HEAT / LAST in red accent */}
+            <h1 className="font-heading font-light text-5xl sm:text-7xl lg:text-8xl mb-6 sm:mb-8 tracking-tight leading-[1.25]">
+              <span className="text-primary">BUILT FOR</span><br />
               <span className="text-accent">HEAT.</span><br />
-              BUILT TO<br />
+              <span className="text-primary">BUILT TO</span><br />
               <span className="text-accent">LAST.</span>
             </h1>
 
@@ -243,11 +244,11 @@ export default function Home() {
       </section>
 
 
-      {/* ── CTA BANNER (GREY #515151 BACKGROUND) ───── */}
-      <section className="bg-muted text-white py-16 sm:py-20 relative overflow-hidden">
+      {/* ── CTA BANNER (ACCENT RED BACKGROUND) ───── */}
+      <section className="bg-accent text-white py-16 sm:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <div>
-            <div className="w-12 h-[2px] bg-accent mb-6" />
+            <div className="w-12 h-[2px] bg-white mb-6" />
             <h2 className="font-heading text-4xl sm:text-5xl font-light text-white leading-[1.25] tracking-tight mb-6 uppercase">
               CAN'T FIND WHAT YOU NEED?<br />
               <span className="text-white">WE BUILD TO SPEC.</span>
@@ -257,7 +258,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex lg:justify-end">
-            <HeroButton to="/enquiry" variant="solid" icon={ArrowRight}>
+            <HeroButton to="/enquiry" variant="outline-white">
               Request Enquiry
             </HeroButton>
           </div>

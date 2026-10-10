@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Mail } from 'lucide-react';
 import productsData from '../../data/products.json';
+import redLogo from '../../assets/red.jpeg';
 
 const footerCategories = [...new Set(productsData.map((product) => product.categoryLabel))];
 const categoryToSlug = (category) => category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -14,11 +15,8 @@ const Footer = () => {
 
         {/* Brand */}
         <div>
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-7 h-7 border border-accent flex items-center justify-center">
-              <span className="text-accent font-heading font-light text-sm">IH</span>
-            </div>
-            <span className="font-heading text-lg font-light tracking-widest text-accent">INDUS HEATERS</span>
+          <div className="mb-5">
+            <img src={redLogo} alt="Indus Heaters" className="h-12 w-auto object-contain" />
           </div>
           <p className="text-primary text-sm leading-[1.25] mb-5 font-normal">
             India's leading industrial heater manufacturer since 2002. Precision engineering for plastic, polymer and rubber industries.

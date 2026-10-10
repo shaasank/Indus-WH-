@@ -198,7 +198,7 @@ export default function Products() {
                         <div className="text-[10px] font-heading font-light uppercase tracking-[0.2em] text-accent mb-1">
                           {product.categoryLabel}
                         </div>
-                        <h3 className="font-heading text-lg font-light text-accent tracking-tight group-hover:text-accent transition-colors">
+                        <h3 className="font-heading text-lg font-light text-primary tracking-tight group-hover:text-accent transition-colors">
                           {product.name}
                         </h3>
                       </div>

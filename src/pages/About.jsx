@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Award } from 'lucide-react';
 import pvtCert from '../assets/products/pvt.jpg';
 import aboutHeroImg from '../assets/products/1.png';
+import redLogo from '../assets/red.jpeg';
 import SectionHeading from '../components/SectionHeading';
 import StatsBar from '../components/StatsBar';
 
@@ -127,6 +128,12 @@ export default function About() {
               <div className="flex items-center gap-2 text-sm text-primary font-normal leading-[1.25]"><Mail className="w-3.5 h-3.5 text-accent" /> {loc.email}</div>
             </div>
           ))}
+        </div>
+
+        {/* Brand closing logo */}
+        <div className="mt-16 flex flex-col items-center gap-4 py-10 border-t border-muted/15">
+          <img src={redLogo} alt="Indus Heaters" className="h-14 w-auto object-contain opacity-90" />
+          <p className="text-xs font-heading font-light uppercase tracking-[0.3em] text-primary/60">Built For Heat. Built To Last.</p>
         </div>
       </section>
     </div>

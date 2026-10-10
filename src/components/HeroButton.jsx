@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function HeroButton({
   to,
-  variant = 'solid', // 'solid' (red) | 'outline' (white with grey border) | 'white' (white with red text)
+  variant = 'solid', // 'solid' | 'outline' | 'white' | 'outline-white'
   children,
   icon: Icon = null,
   className = '',
@@ -17,6 +17,8 @@ export default function HeroButton({
     variantStyles = 'bg-white text-primary border border-muted/30 hover:bg-muted hover:text-white active:translate-y-0';
   } else if (variant === 'white') {
     variantStyles = 'bg-white text-accent border border-white hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0';
+  } else if (variant === 'outline-white') {
+    variantStyles = 'bg-transparent text-white border border-white hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0';
   }
 
   return (

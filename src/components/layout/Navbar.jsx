@@ -26,7 +26,7 @@ const Navbar = () => {
           <img
             src={redLogo}
             alt="Indus Heaters"
-            className="h-9 sm:h-11 md:h-12 w-auto object-contain max-w-[200px] sm:max-w-[260px]"
+            className="h-9 sm:h-11 md:h-12 w-auto object-contain max-w-[200px] sm:max-w-[260px] opacity-100"
           />
         </Link>
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
+import redLogo from '../assets/red.jpeg';
 
 const locations = [
   { city: 'Chennai — Headquarters', address: '123 Industrial Estate, Ambattur, Chennai 600058, Tamil Nadu', phone: '+91 44 0000 0000', email: 'info@indusheaters.com' },
@@ -134,6 +135,12 @@ export default function Contact() {
             allowFullScreen=""
             loading="lazy"
           />
+        </div>
+
+        {/* Brand closing logo */}
+        <div className="mt-12 flex flex-col items-center gap-4 py-10 border-t border-muted/15">
+          <img src={redLogo} alt="Indus Heaters" className="h-14 w-auto object-contain opacity-90" />
+          <p className="text-xs font-heading font-light uppercase tracking-[0.3em] text-primary/60">Built For Heat. Built To Last.</p>
         </div>
       </div>
     </div>
