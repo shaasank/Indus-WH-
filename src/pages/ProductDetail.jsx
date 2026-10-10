@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import productsData from '../data/products.json';
 import { useCartStore } from '../store/useCartStore';
 import { ClipboardList, Check, Download, Zap, Shield, ChevronRight, Plus, Minus, UploadCloud, Paperclip } from 'lucide-react';
+import SectionHeading from '../components/SectionHeading';
 
 const categoryToSlug = (category) => category ? category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '';
 
@@ -20,10 +21,10 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white text-primary">
-        <div className="font-mono text-xs font-bold text-muted mb-4 uppercase tracking-[0.3em]">Resource Not Found</div>
-        <h1 className="font-heading text-4xl font-bold mb-8 text-primary">Product Not Found</h1>
-        <Link to="/products" className="bg-accent text-white px-8 py-3 font-heading font-bold text-sm uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white text-primary font-heading font-light">
+        <div className="font-heading text-xs font-light text-primary mb-4 uppercase tracking-[0.3em]">Resource Not Found</div>
+        <h1 className="font-heading text-4xl font-light mb-8 text-accent uppercase">Product Not Found</h1>
+        <Link to="/products" className="bg-accent text-white px-8 py-3 font-heading font-light text-sm uppercase tracking-widest hover:bg-accent/90 transition-all">
           ← Return to Catalogue
         </Link>
       </div>
@@ -52,93 +53,90 @@ export default function ProductDetail() {
   const related = productsData.filter(p => p.relatedProducts?.includes(product.slug)).slice(0, 3);
 
   return (
-    <div className="bg-white text-primary">
+    <div className="bg-white text-primary font-heading font-light">
 
       {/* ── BREADCRUMB SYSTEM ─────────────────── */}
-      <div className="border-b border-border bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3 text-[10px] font-mono font-bold uppercase tracking-widest text-muted">
+      <div className="border-b border-muted/15 bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3 text-[10px] font-heading font-light uppercase tracking-widest text-primary">
           <Link to="/" className="hover:text-accent transition-colors">Home</Link>
           <ChevronRight className="w-3 h-3 opacity-40" />
           <Link to="/products" className="hover:text-accent transition-colors">Catalogue</Link>
           <ChevronRight className="w-3 h-3 opacity-40" />
           <Link to={`/products?category=${categoryToSlug(product.categoryLabel)}`} className="hover:text-accent transition-colors">{product.categoryLabel}</Link>
           <ChevronRight className="w-3 h-3 opacity-40" />
-          <span className="text-primary">{product.name}</span>
+          <span className="text-accent">{product.name}</span>
         </div>
       </div>
 
       {/* ── MAIN SYSTEM VIEW ──────────────────── */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col border-b border-border">
+        <div className="flex flex-col border-b border-muted/15">
 
-          {/* TOP: Image Panel (Stacked Top) */}
-          <div className="w-full bg-white flex items-center justify-center p-6 sm:p-10 relative overflow-hidden border-b border-border group min-h-[320px] sm:min-h-[420px]">
+          {/* TOP: Image Panel */}
+          <div className="w-full bg-white flex items-center justify-center p-6 sm:p-10 relative overflow-hidden border-b border-muted/15 group min-h-[320px] sm:min-h-[420px]">
             <div className="absolute top-0 left-0 w-1.5 h-full bg-accent" />
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-border" />
-            
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-muted/15" />
 
-            
             <motion.img
               src={product.images[0]}
               alt={product.name}
-              className="w-full max-h-[70vh] object-contain relative z-10 drop-shadow-xl"
+              className="w-full max-h-[70vh] object-contain relative z-10 drop-shadow-md"
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             />
             
-            <div className="absolute bottom-4 right-6 font-mono text-[9px] text-muted uppercase tracking-[0.3em]">
+            <div className="absolute bottom-4 right-6 font-heading text-[9px] text-primary uppercase tracking-[0.3em] font-light">
                Render: Indus v4.2
             </div>
           </div>
 
           {/* BELOW: Product Details, Specifications and Enquiry Form */}
           <div className="py-10 px-4 sm:px-6 lg:px-8 bg-white relative">
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-8 pb-6 border-b border-border">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-8 pb-6 border-b border-muted/15">
               <div>
-                {/* Category Marker */}
-                <div className="inline-flex items-center gap-3 mb-3">
-                  <div className="w-8 h-[2px] bg-accent" />
-                  <span className="text-accent font-mono text-[10px] font-bold uppercase tracking-[0.3em]">{product.categoryLabel}</span>
-                </div>
-                <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-[1.1] tracking-tight">{product.name}</h1>
+                <SectionHeading
+                  label={product.categoryLabel}
+                  title={product.name}
+                  theme="on-white"
+                  className="mb-0"
+                />
               </div>
-              <div className="font-mono text-[10px] text-muted uppercase tracking-widest px-3 py-1.5 border border-border shrink-0 self-start">
+              <div className="font-heading text-[10px] font-light text-primary uppercase tracking-widest px-3 py-1.5 border border-muted/15 shrink-0 self-start">
                  Unit ID: 1024-0{product.id}
               </div>
             </div>
 
-            <p className="text-primary/80 leading-[1.8] mb-10 text-base border-l-2 border-border pl-6 italic max-w-4xl">
+            <p className="text-primary leading-[1.25] mb-10 text-base border-l-2 border-muted/15 pl-6 font-normal max-w-4xl">
               {product.fullDescription}
             </p>
 
-            {/* Content Layout: 1 column on mobile, 2 columns on lg screen */}
+            {/* Content Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
               
               {/* Column 1: Specifications & CTAs */}
               <div className="flex flex-col">
-                {/* ── SPECS TABLE ────────────────── */}
                 <div className="mb-8 flex-grow">
-                  <div className="text-[10px] tracking-[0.3em] font-mono font-bold uppercase text-muted mb-3 flex items-center gap-4">
+                  <div className="text-[10px] tracking-[0.25em] font-heading font-light uppercase text-primary mb-3 flex items-center gap-4">
                      <span className="shrink-0">Datasheet v0.8</span>
-                     <div className="w-full h-[1px] bg-border" />
+                     <div className="w-full h-[1px] bg-muted/15" />
                   </div>
                   
-                  <div className="border border-border overflow-hidden">
-                    <table className="w-full text-sm border-collapse font-mono">
+                  <div className="border border-muted/15 overflow-hidden">
+                    <table className="w-full text-sm border-collapse font-heading font-light">
                       <thead>
-                        <tr className="bg-secondary text-primary text-[10px] font-bold uppercase tracking-widest">
-                           <th className="py-3 px-6 text-left border-r border-primary/20 font-bold">Parameter</th>
-                           <th className="py-3 px-6 text-left font-extrabold text-primary">Specification Value</th>
+                        <tr className="bg-accent text-white text-[10px] font-light uppercase tracking-widest">
+                           <th className="py-3 px-6 text-left border-r border-white/20 font-light">Parameter</th>
+                           <th className="py-3 px-6 text-left font-light text-white">Specification Value</th>
                         </tr>
                       </thead>
                       <tbody className="bg-muted/5">
                         {product.specs.map((spec, i) => (
-                          <tr key={i} className="border-b border-border last:border-0 hover:bg-muted/10 group transition-colors">
-                            <td className="py-3.5 px-6 font-bold text-primary/70 w-2/5 border-r border-border uppercase text-xs tracking-tight">
+                          <tr key={i} className="border-b border-muted/15 last:border-0 hover:bg-muted/10 group transition-colors">
+                            <td className="py-3.5 px-6 font-light text-primary w-2/5 border-r border-muted/15 uppercase text-xs tracking-tight">
                               {spec.label}
                             </td>
-                            <td className="py-3.5 px-6 text-primary font-bold text-sm tracking-tight">
+                            <td className="py-3.5 px-6 text-primary font-light text-sm tracking-tight">
                               {spec.value}
                             </td>
                           </tr>
@@ -149,18 +147,18 @@ export default function ProductDetail() {
                 </div>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-0 border border-border shadow-lg mt-auto">
+                <div className="flex flex-col sm:flex-row gap-0 border border-muted/15 shadow-sm mt-auto">
                   <button
                     onClick={handleAdd}
-                    className={`flex-[2] flex items-center justify-center gap-3 py-5 font-heading font-bold text-base uppercase tracking-[0.2em] transition-all relative group/add ${
+                    className={`flex-[2] flex items-center justify-center gap-3 py-5 font-heading font-light text-base uppercase tracking-[0.2em] transition-all relative group/add ${
                       added
-                        ? 'bg-secondary text-primary font-bold'
-                        : 'bg-accent text-white hover:bg-secondary hover:text-primary'
+                        ? 'bg-accent text-white'
+                        : 'bg-accent text-white hover:bg-accent/90'
                     }`}
                   >
                     {added ? <><Check className="w-5 h-5" /> Added to Enquiry</> : <><ClipboardList className="w-5 h-5 group-hover/add:rotate-12 transition-transform" /> Add to Enquiry</>}
                   </button>
-                  <button className="flex-1 flex items-center justify-center gap-2 py-5 px-6 bg-white border-l border-border text-primary font-heading font-bold text-sm uppercase tracking-[0.2em] hover:bg-muted/10 transition-all group/dl">
+                  <button className="flex-1 flex items-center justify-center gap-2 py-5 px-6 bg-white border-l border-muted/15 text-primary font-heading font-light text-sm uppercase tracking-[0.2em] hover:bg-muted/10 transition-all group/dl">
                     <Download className="w-4 h-4 text-accent group-hover/dl:translate-y-0.5 transition-transform" /> 
                     <span className="hidden sm:inline">Data Sheet</span>
                   </button>
@@ -169,18 +167,18 @@ export default function ProductDetail() {
 
               {/* Column 2: Custom Order & Form Details */}
               <div>
-                <div className="border border-border bg-white">
-                  <div className="px-6 py-3.5 bg-muted/5 border-b border-border font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-muted">
+                <div className="border border-muted/15 bg-white">
+                  <div className="px-6 py-3.5 bg-muted/5 border-b border-muted/15 font-heading text-[10px] font-light uppercase tracking-[0.25em] text-primary">
                     Custom Order Details
                   </div>
                   <div className="p-6 space-y-6">
                     <div>
-                      <div className="font-mono text-[9px] text-muted uppercase tracking-[0.25em] mb-2">Quantity</div>
-                      <div className="flex items-center border border-border w-fit bg-white">
+                      <div className="font-heading text-[9px] text-primary uppercase tracking-[0.25em] mb-2 font-light">Quantity</div>
+                      <div className="flex items-center border border-muted/15 w-fit bg-white">
                         <button
                           type="button"
                           onClick={() => setQuantity((current) => Math.max(1, current - 1))}
-                          className="w-10 h-10 flex items-center justify-center text-muted hover:bg-primary hover:text-white transition-all"
+                          className="w-10 h-10 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-all"
                           aria-label="Decrease product quantity"
                         >
                           <Minus className="w-4 h-4" />
@@ -190,12 +188,12 @@ export default function ProductDetail() {
                           min="1"
                           value={quantity}
                           onChange={(event) => setQuantity(Math.max(1, Number(event.target.value) || 1))}
-                          className="w-16 h-10 text-center text-base font-mono font-bold bg-muted/5 border-x border-border focus:outline-none focus:bg-white"
+                          className="w-16 h-10 text-center text-base font-heading font-light bg-muted/5 border-x border-muted/15 focus:outline-none focus:bg-white"
                         />
                         <button
                           type="button"
                           onClick={() => setQuantity((current) => current + 1)}
-                          className="w-10 h-10 flex items-center justify-center text-muted hover:bg-primary hover:text-white transition-all"
+                          className="w-10 h-10 flex items-center justify-center text-primary hover:bg-accent hover:text-white transition-all"
                           aria-label="Increase product quantity"
                         >
                           <Plus className="w-4 h-4" />
@@ -203,20 +201,20 @@ export default function ProductDetail() {
                       </div>
                     </div>
 
-                    <div className="border border-border">
-                      <div className="px-4 py-2.5 bg-muted/5 border-b border-border font-mono text-[9px] font-bold uppercase tracking-[0.25em] text-muted">Custom Measurements</div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border">
+                    <div className="border border-muted/15">
+                      <div className="px-4 py-2.5 bg-muted/5 border-b border-muted/15 font-heading text-[9px] font-light uppercase tracking-[0.25em] text-primary">Custom Measurements</div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-muted/15">
                         {(product.specs?.length ? product.specs : [{ label: 'Measurement' }]).map((spec, index) => {
                           const label = measurementLabels[index] || 'M' + (index + 1);
                           return (
                             <label key={label} className="bg-white px-4 py-3 flex items-center gap-3">
-                              <span className="w-8 h-8 shrink-0 bg-secondary text-primary flex items-center justify-center font-mono text-xs font-bold">{label}</span>
+                              <span className="w-8 h-8 shrink-0 bg-accent text-white flex items-center justify-center font-heading text-xs font-light">{label}</span>
                               <input
                                 type="text"
                                 value={measurements[label] || ''}
                                 onChange={(event) => handleMeasurementChange(label, event.target.value)}
                                 placeholder={spec.label ? spec.label.toUpperCase() : 'Custom Size'}
-                                className="min-w-0 flex-1 border-b-2 border-border px-0 py-1.5 text-xs font-mono font-bold text-primary placeholder:text-muted/50 focus:border-accent focus:outline-none bg-transparent transition-all"
+                                className="min-w-0 flex-1 border-b-2 border-muted/15 px-0 py-1.5 text-xs font-heading font-light text-primary placeholder:text-primary/50 focus:border-accent focus:outline-none bg-transparent transition-all"
                               />
                             </label>
                           );
@@ -225,18 +223,18 @@ export default function ProductDetail() {
                     </div>
 
                     <label className="block">
-                      <div className="font-mono text-[9px] text-muted uppercase tracking-[0.25em] mb-2">Custom Details</div>
+                      <div className="font-heading text-[9px] text-primary uppercase tracking-[0.25em] mb-2 font-light">Custom Details</div>
                       <input
                         type="text"
                         value={note}
                         onChange={(event) => setNote(event.target.value)}
                         placeholder="Add note..."
-                        className="w-full text-xs font-mono border border-border px-4 py-3 text-primary placeholder:text-muted/50 focus:border-accent focus:outline-none bg-muted/5"
+                        className="w-full text-xs font-heading border border-muted/15 px-4 py-3 text-primary placeholder:text-primary/50 focus:border-accent focus:outline-none bg-muted/5 font-light"
                       />
                     </label>
 
-                    <div className="border border-dashed border-border bg-muted/5 p-4">
-                      <label className="flex items-center justify-center gap-3 text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-primary cursor-pointer hover:text-accent">
+                    <div className="border border-dashed border-muted/15 bg-muted/5 p-4">
+                      <label className="flex items-center justify-center gap-3 text-[10px] font-heading font-light uppercase tracking-[0.25em] text-primary cursor-pointer hover:text-accent">
                         <UploadCloud className="w-5 h-5 text-accent" />
                         Attach Sample Image or PDF
                         <input
@@ -250,7 +248,7 @@ export default function ProductDetail() {
                       {attachments.length > 0 && (
                         <div className="mt-3 space-y-1">
                           {attachments.map((file, fileIndex) => (
-                            <div key={file.name + fileIndex} className="flex items-center gap-2 text-[10px] font-mono font-bold text-primary/70 truncate">
+                            <div key={file.name + fileIndex} className="flex items-center gap-2 text-[10px] font-heading font-light text-primary/70 truncate">
                               <Paperclip className="w-3.5 h-3.5 text-accent shrink-0" />
                               <span className="truncate">{file.name}</span>
                             </div>
@@ -267,20 +265,20 @@ export default function ProductDetail() {
         </div>
 
         {/* ── TECHNICAL DEEP DIVE ───────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border-b border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-b border-muted/15">
           {/* Features */}
-          <div className="py-16 px-8 lg:px-12 border-r border-border bg-muted/5 group">
+          <div className="py-16 px-8 lg:px-12 border-r border-muted/15 bg-muted/5 group">
             <div className="flex items-center gap-3 mb-8">
               <Shield className="w-6 h-6 text-accent" />
-              <h2 className="font-heading text-2xl font-bold uppercase tracking-tight text-primary">System Advantages</h2>
+              <h2 className="font-heading text-2xl font-light uppercase tracking-tight text-accent">System Advantages</h2>
             </div>
             <div className="space-y-4">
               {product.features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-4 text-sm text-primary/80">
-                  <div className="w-5 h-5 bg-secondary flex items-center justify-center shrink-0">
-                    <Check className="w-3 h-3 text-primary" />
+                <div key={i} className="flex items-start gap-4 text-sm text-primary font-normal leading-[1.25]">
+                  <div className="w-5 h-5 bg-accent flex items-center justify-center shrink-0">
+                    <Check className="w-3 h-3 text-white" />
                   </div>
-                  <span className="leading-relaxed border-b border-transparent group-hover:border-border transition-all">{feature}</span>
+                  <span className="leading-[1.25] border-b border-transparent group-hover:border-muted/15 transition-all">{feature}</span>
                 </div>
               ))}
             </div>
@@ -289,14 +287,14 @@ export default function ProductDetail() {
           {/* Applications */}
           <div className="py-16 px-8 lg:px-12">
             <div className="flex items-center gap-3 mb-8">
-              <Zap className="w-6 h-6 text-secondary" />
-              <h2 className="font-heading text-2xl font-bold uppercase tracking-tight text-primary">Active Sectors</h2>
+              <Zap className="w-6 h-6 text-accent" />
+              <h2 className="font-heading text-2xl font-light uppercase tracking-tight text-accent">Active Sectors</h2>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {product.applications.map((app, i) => (
                 <span
                   key={i}
-                  className="px-5 py-3.5 border-l-2 border-secondary text-[10px] font-mono font-bold uppercase tracking-widest text-primary bg-muted/5 hover:bg-secondary transition-all cursor-default"
+                  className="px-5 py-3.5 border-l-2 border-accent text-[10px] font-heading font-light uppercase tracking-widest text-primary bg-muted/5 hover:bg-accent hover:text-white transition-all cursor-default"
                 >
                   {app}
                 </span>
@@ -308,21 +306,18 @@ export default function ProductDetail() {
         {/* ── RELATED MODULES ───────────────────── */}
         {related.length > 0 && (
           <div className="py-16">
-            <div className="flex items-center justify-between mb-8">
-               <h2 className="font-heading text-3xl font-bold uppercase tracking-tight text-primary">Related Products</h2>
-               <div className="h-[2px] w-full max-w-sm bg-border mx-8 hidden md:block" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-border">
+            <SectionHeading title="RELATED PRODUCTS" theme="on-white" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-muted/15">
               {related.map((rel, i) => (
                 <Link
                   key={i}
                   to={`/products/${rel.category}/${rel.slug}`}
-                  className="group border-r border-border last:border-0 p-8 hover:bg-muted/5 transition-all flex flex-col items-center text-center"
+                  className="group border-r border-muted/15 last:border-0 p-8 hover:bg-muted/5 hover:border-accent/30 transition-all flex flex-col items-center text-center"
                 >
-                  <img src={rel.images[0]} alt={rel.name} className="w-24 h-24 object-contain mb-6 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="text-[9px] text-accent font-mono font-bold uppercase tracking-[0.3em] mb-2">{rel.categoryLabel}</div>
-                  <div className="font-heading text-lg font-bold text-primary group-hover:text-accent transition-colors">{rel.name}</div>
-                  <div className="mt-3 opacity-0 group-hover:opacity-100 font-mono text-[8px] text-accent tracking-widest transition-opacity uppercase">View Specs →</div>
+                  <img src={rel.images[0]} alt={rel.name} className="w-24 h-24 object-contain mb-6 group-hover:scale-105 transition-transform duration-300" />
+                  <div className="text-[9px] text-accent font-heading font-light uppercase tracking-[0.3em] mb-2">{rel.categoryLabel}</div>
+                  <div className="font-heading text-lg font-light text-accent group-hover:text-accent transition-colors">{rel.name}</div>
+                  <div className="mt-3 opacity-0 group-hover:opacity-100 font-heading text-[9px] text-accent tracking-widest transition-opacity uppercase font-light">View Specs →</div>
                 </Link>
               ))}
             </div>

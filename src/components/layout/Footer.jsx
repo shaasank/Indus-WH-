@@ -7,33 +7,33 @@ const categoryToSlug = (category) => category.toLowerCase().replace(/[^a-z0-9]+/
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white border-t-4 border-accent">
+    <footer className="bg-white text-primary border-t-4 border-accent font-heading font-light">
 
       {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-muted/15">
 
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-7 h-7 border border-secondary flex items-center justify-center">
-              <span className="text-secondary font-heading font-bold text-sm">IH</span>
+            <div className="w-7 h-7 border border-accent flex items-center justify-center">
+              <span className="text-accent font-heading font-light text-sm">IH</span>
             </div>
-            <span className="font-heading text-lg font-bold tracking-widest text-white">INDUS HEATERS</span>
+            <span className="font-heading text-lg font-light tracking-widest text-accent">INDUS HEATERS</span>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed mb-5">
+          <p className="text-primary text-sm leading-[1.25] mb-5 font-normal">
             India's leading industrial heater manufacturer since 2002. Precision engineering for plastic, polymer and rubber industries.
           </p>
-          <div className="text-xs text-secondary uppercase tracking-[0.3em] font-mono font-bold">
+          <div className="text-xs text-accent uppercase tracking-[0.25em] font-heading font-light">
             BUILT FOR HEAT. BUILT TO LAST.
           </div>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-secondary mb-5 pb-3 border-b border-white/10">Quick Links</h4>
+          <h4 className="font-heading text-sm font-light uppercase tracking-widest text-accent mb-5 pb-3 border-b border-muted/15">Quick Links</h4>
           <div className="flex flex-col gap-3">
             {[['/', 'Home'], ['/products', 'All Products'], ['/about', 'About Us'], ['/contact', 'Contact'], ['/enquiry', 'Send Enquiry']].map(([path, label]) => (
-              <Link key={path} to={path} className="text-sm text-white/70 hover:text-secondary hover:translate-x-1 transition-all inline-block">
+              <Link key={path} to={path} className="text-sm text-primary hover:text-accent hover:translate-x-1 transition-all inline-block font-normal">
                 {label}
               </Link>
             ))}
@@ -42,10 +42,10 @@ const Footer = () => {
 
         {/* Products */}
         <div>
-          <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-secondary mb-5 pb-3 border-b border-white/10">Product Range</h4>
+          <h4 className="font-heading text-sm font-light uppercase tracking-widest text-accent mb-5 pb-3 border-b border-muted/15">Product Range</h4>
           <div className="flex flex-col gap-3">
             {footerCategories.map(cat => (
-              <Link key={cat} to={`/products?category=${categoryToSlug(cat)}`} className="text-sm text-white/70 hover:text-secondary hover:translate-x-1 transition-all inline-block">
+              <Link key={cat} to={`/products?category=${categoryToSlug(cat)}`} className="text-sm text-primary hover:text-accent hover:translate-x-1 transition-all inline-block font-normal">
                 {cat}
               </Link>
             ))}
@@ -54,24 +54,24 @@ const Footer = () => {
 
         {/* Locations */}
         <div>
-          <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-secondary mb-5 pb-3 border-b border-white/10">Locations</h4>
+          <h4 className="font-heading text-sm font-light uppercase tracking-widest text-accent mb-5 pb-3 border-b border-muted/15">Locations</h4>
           <div className="flex flex-col gap-4">
-            <div className="flex gap-3 text-sm text-white/70">
-              <MapPin className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
+            <div className="flex gap-3 text-sm text-primary font-normal">
+              <MapPin className="w-4 h-4 text-accent mt-0.5 shrink-0" />
               <div>
-                <div className="text-white font-bold text-[10px] uppercase tracking-[0.2em] mb-0.5 font-mono">HQ — CHENNAI</div>
-                <div className="font-mono text-[10px] text-white/60">Tamil Nadu, India</div>
+                <div className="text-accent font-light text-[11px] uppercase tracking-[0.2em] mb-0.5 font-heading">HQ — CHENNAI</div>
+                <div className="font-heading text-[11px] text-primary">Tamil Nadu, India</div>
               </div>
             </div>
-            <div className="flex gap-3 text-sm text-white/70">
-              <MapPin className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
+            <div className="flex gap-3 text-sm text-primary font-normal">
+              <MapPin className="w-4 h-4 text-accent mt-0.5 shrink-0" />
               <div>
-                <div className="text-white font-bold text-[10px] uppercase tracking-[0.2em] mb-0.5 font-mono">PLANT — MUTLUR</div>
-                <div className="font-mono text-[10px] text-white/60">Tamil Nadu, India</div>
+                <div className="text-accent font-light text-[11px] uppercase tracking-[0.2em] mb-0.5 font-heading">PLANT — MUTLUR</div>
+                <div className="font-heading text-[11px] text-primary">Tamil Nadu, India</div>
               </div>
             </div>
-            <div className="flex gap-3 text-sm text-white/70">
-              <Mail className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
+            <div className="flex gap-3 text-sm text-primary font-normal">
+              <Mail className="w-4 h-4 text-accent mt-0.5 shrink-0" />
               <span>info@indusheaters.com</span>
             </div>
           </div>
@@ -80,10 +80,10 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p className="text-xs text-white/40">© {new Date().getFullYear()} Indus Heaters. All rights reserved.</p>
-        <div className="flex gap-6 text-xs text-white/40">
-          <Link to="#" className="hover:text-secondary transition-colors">Privacy Policy</Link>
-          <Link to="#" className="hover:text-secondary transition-colors">Terms of Service</Link>
+        <p className="text-xs text-primary/70">© {new Date().getFullYear()} Indus Heaters. All rights reserved.</p>
+        <div className="flex gap-6 text-xs text-primary/70">
+          <Link to="#" className="hover:text-accent transition-colors">Privacy Policy</Link>
+          <Link to="#" className="hover:text-accent transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

@@ -15,7 +15,7 @@ const Navbar = () => {
   const totalCount = useCartStore((state) => state.getTotalCount());
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-muted/15">
       {/* Top accent line */}
       <div className="h-[3px] bg-accent w-full" />
 
@@ -36,7 +36,7 @@ const Navbar = () => {
             to="/"
             end
             className={({ isActive }) =>
-              `px-5 h-16 flex items-center font-heading text-sm font-semibold tracking-widest uppercase border-b-[3px] transition-colors ${
+              `px-5 h-16 flex items-center font-heading text-sm font-light tracking-widest uppercase border-b-[3px] transition-colors ${
                 isActive
                   ? 'border-accent text-accent'
                   : 'border-transparent text-primary hover:text-accent'
@@ -52,25 +52,25 @@ const Navbar = () => {
             onMouseEnter={() => setProductsOpen(true)}
             onMouseLeave={() => setProductsOpen(false)}
           >
-            <button className={`px-5 h-16 flex items-center gap-1 font-heading text-sm font-semibold tracking-widest uppercase border-b-[3px] transition-colors ${
+            <button className={`px-5 h-16 flex items-center gap-1 font-heading text-sm font-light tracking-widest uppercase border-b-[3px] transition-colors ${
               productsOpen || location.pathname.startsWith('/products') ? 'border-accent text-accent' : 'border-transparent text-primary hover:text-accent'
             }`}>
               Products <ChevronDown className={`w-3 h-3 transition-transform ${productsOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {productsOpen && (
-              <div className="absolute top-full left-0 w-64 bg-white border border-border border-t-2 border-t-accent shadow-xl z-50">
+              <div className="absolute top-full left-0 w-64 bg-white border border-muted/15 border-t-2 border-t-accent shadow-md z-50">
                 {categories.map((cat) => (
                   <Link
                     key={cat}
                     to={`/products?category=${categoryToSlug(cat)}`}
                     onClick={() => setProductsOpen(false)}
-                    className="block px-5 py-3 text-sm text-primary hover:bg-muted/10 hover:text-accent border-b border-border last:border-0 font-body transition-colors"
+                    className="block px-5 py-3 text-sm text-primary hover:bg-muted/5 hover:text-accent border-b border-muted/15 last:border-0 font-body transition-colors"
                   >
                     {cat}
                   </Link>
                 ))}
-                <Link to="/products" className="block px-5 py-3 text-sm font-bold text-accent bg-accent/5 hover:bg-accent hover:text-white transition-colors uppercase tracking-wider font-heading">
+                <Link to="/products" className="block px-5 py-3 text-sm font-light text-accent bg-accent/5 hover:bg-accent hover:text-white transition-colors uppercase tracking-wider font-heading">
                   View All Products →
                 </Link>
               </div>
@@ -82,7 +82,7 @@ const Navbar = () => {
               key={path}
               to={path}
               className={({ isActive }) =>
-                `px-5 h-16 flex items-center font-heading text-sm font-semibold tracking-widest uppercase border-b-[3px] transition-colors ${
+                `px-5 h-16 flex items-center font-heading text-sm font-light tracking-widest uppercase border-b-[3px] transition-colors ${
                   isActive
                     ? 'border-accent text-accent'
                     : 'border-transparent text-primary hover:text-accent'
@@ -98,12 +98,12 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <Link
             to="/enquiry"
-            className="relative flex items-center gap-2 bg-accent text-white px-4 h-9 font-heading text-sm font-bold tracking-widest uppercase hover:bg-primary transition-colors"
+            className="relative flex items-center gap-2 bg-accent text-white px-4 h-9 font-heading text-sm font-light tracking-widest uppercase hover:bg-accent/90 transition-colors"
           >
             <ClipboardList className="w-4 h-4" />
             <span className="hidden sm:inline">Enquiry</span>
             {totalCount > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 bg-secondary text-primary text-[10px] font-bold w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-1.5 -right-1.5 bg-accent text-white text-[10px] font-light w-5 h-5 flex items-center justify-center">
                 {totalCount}
               </span>
             )}
@@ -121,13 +121,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-white">
+        <div className="md:hidden border-t border-muted/15 bg-white">
           {[['/', 'Home'], ['/products', 'Products'], ['/about', 'About'], ['/contact', 'Contact']].map(([path, label]) => (
             <Link
               key={path}
               to={path}
               onClick={() => setMobileOpen(false)}
-              className="block px-6 py-4 font-heading text-sm font-bold uppercase tracking-widest text-primary border-b border-border hover:text-accent hover:pl-8 transition-all"
+              className="block px-6 py-4 font-heading text-sm font-light uppercase tracking-widest text-primary border-b border-muted/15 hover:text-accent hover:pl-8 transition-all"
             >
               {label}
             </Link>

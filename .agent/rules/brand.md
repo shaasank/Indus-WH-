@@ -1,11 +1,23 @@
-# Indus-WH brand rules
-- Colors (use ONLY these + neutral white/black tints):
-  - #d81b21 = accent / highlight / primary CTA / active & hover states
-  - #152f54 = primary dark (navbar/footer backgrounds, headings)
-  - #c7942b = secondary gold (small highlights, dividers, icons)
-  - #818286 = muted text, borders, secondary UI
-- Define colors ONCE as CSS variables / Tailwind theme tokens. Never hardcode hex in components.
-- Font: the custom font in src/assets/Fonts, loaded via @font-face, applied globally to body and all elements (inputs/buttons included). No fallback to other web fonts.
-- Spacing: consistent scale only; no stray margins, empty divs, or <br> used for spacing.
-- Do not touch node_modules, lockfiles, or config files unless required. Explain any dependency you add.
-- After UI changes, run the dev server, check in the browser, and attach screenshots.
+# Indus-WH Brand Rules
+
+- **Strict Palette**:
+  - `#d81b21` = Brand Red (accent, highlights, primary CTAs, active/hover states, headings on white backgrounds)
+  - `#515151` = Brand Grey (paragraphs, body text, borders, secondary UI, navbar/footer text, outline buttons)
+  - `#ffffff` = Pure White (backgrounds, text on red/grey backgrounds)
+  - `#000000` = Black (used VERY sparingly, only for small body text highlights/key numbers, never for headings)
+  - **Forbidden**: Navy (`#152f54`), Gold (`#c7942b`), old grey (`#818286`), and any off-palette colors are completely removed.
+- **Typography & Font Rules**:
+  - `Gilroy-Light` (`font-weight: 300`, `font-synthesis: none`) is registered via `@font-face` from `src/assets/Fonts/Fonts/Gilroy-Light.ttf`.
+  - Applied to ALL headings (`h1`-`h6`, section titles, card titles, stat labels) and all heavy/bold elements (`font-bold`, `font-semibold`, `font-extrabold`, `font-black`, `font-weight: 300-900`, `<strong>`, `<b>`). Headings must NEVER look faux-bold.
+- **Heading + Paragraph + Button Color Mix**:
+  - On White Background: Heading Red `#d81b21`, Paragraph Grey `#515151`, Primary Button Solid Red with White text (or outline with grey border/text).
+  - On Red `#d81b21` Background: Heading White, Paragraph White, Button White with Red text.
+  - On Grey `#515151` Background: Heading White, Paragraph White, Button Solid Red with White text.
+- **Industries We Serve Box Hover**:
+  - On hover / focus-visible / active, the WHOLE box background switches to solid `#d81b21` with white text, 200ms smooth transition, subtle lift (`hover:-translate-y-[2px]`), and soft red shadow (`hover:shadow-md hover:shadow-accent/25`). No container height/width layout shift.
+- **Softer Borders & Lines**:
+  - All borders, divider lines, framing rectangles, and list separators use a 1px border at ~12-15% opacity (`rgba(81, 81, 81, 0.15)` / `border-muted/15`). Defined centrally as `--border-subtle`.
+  - Card shadows reduced to 6-8% opacity. Card hover borders transition to soft red (`hover:border-accent/30`).
+  - Vertical accent lines height set to 20% of original.
+- **Verification**:
+  - Test at 360px, 390px, 768px, 1280px. Run `npm run lint` and `npm run build`. Update `CHANGES.md`.
